@@ -1,0 +1,23 @@
+
+### 测试1
+POST {{host}}/param/spel/getter/1?key=k1
+Content-Type: application/json
+
+{
+  "id": "1",
+  "name": "name1",
+  "next": {
+    "id": "12",
+    "name": "name12"
+  },
+  "nextList": [
+    {
+      "id": "111",
+      "name": "nextList1"
+    },
+    {
+      "id": "112",
+      "name": "nextList2"
+    }
+  ]
+}

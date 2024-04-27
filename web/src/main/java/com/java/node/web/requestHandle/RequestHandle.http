@@ -1,0 +1,22 @@
+
+### 签名错误测试
+GET {{host}}/request/handle/get?data=data_get&sign=&ts=123456789
+
+### get请求测试
+GET {{host}}/request/handle/get?data=data_get&sign=xxxx&ts=123456789
+
+### post-form请求测试
+POST {{host}}/request/handle/post-form
+Content-Type: application/x-www-form-urlencoded
+
+data=data_post-form&sign=xxxx&ts=123456789
+
+### post-json请求测试
+POST {{host}}/request/handle/post-json
+Content-Type: application/json
+
+{
+  "data": "data_post-json",
+  "sign": "xxxx",
+  "ts": 123456789
+}

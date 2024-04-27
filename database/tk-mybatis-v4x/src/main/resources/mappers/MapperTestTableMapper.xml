@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.java.node.databse.tk_mybatis_v4x.mapper.MapperTestTableMapper">
+    <resultMap id="BaseResultMap" type="com.java.node.databse.tk_mybatis_v4x.entity.MapperTestTable">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <result column="table_id" property="tableId" jdbcType="INTEGER"/>
+        <result column="uuid" property="uuid" jdbcType="VARCHAR"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="counter" property="counter" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+</mapper>

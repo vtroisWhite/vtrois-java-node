@@ -1,0 +1,73 @@
+
+### 调用task1方法
+POST {{host}}/invoke/interface
+Content-Type: application/json
+
+{
+  "className": "InvokeInterfaceController",
+  "methodName": "task1",
+  "argList": []
+}
+
+### 调用task2方法
+POST {{host}}/invoke/interface
+Content-Type: application/json
+
+{
+  "className": "InvokeInterfaceController",
+  "methodName": "task2",
+  "argList": [
+    {
+      "classType": "java.lang.String",
+      "value": "参数字符串"
+    }
+  ]
+}
+
+### 调用task3方法
+POST {{host}}/invoke/interface
+Content-Type: application/json
+
+{
+  "className": "InvokeInterfaceController",
+  "methodName": "task3",
+  "argList": [
+    {
+      "classType": "java.lang.Integer",
+      "value": "123456"
+    },
+    {
+      "classType": "java.util.List",
+      "value": "[1,2]"
+    }
+  ]
+}
+
+### 调用task4方法
+POST {{host}}/invoke/interface
+Content-Type: application/json
+
+{
+  "className": "InvokeInterfaceController",
+  "methodName": "task4",
+  "argList": [
+    {
+      "classType": "com.java.node.web.invokeInterface.InvokeParam",
+      "value": "{\"className\":\"InvokeInterfaceController\",\"methodName\":\"task2\",\"argList\":[{\"classType\":\"java.lang.String\",\"value\":\"参数字符串\"}]}"
+    },
+    {
+      "classType": "java.lang.String",
+      "value": null
+    },
+    {
+      "classType": "java.lang.Integer",
+      "value": null
+    },
+    {
+      "classType": "java.util.List",
+      "value": null
+    }
+  ]
+}
+
+

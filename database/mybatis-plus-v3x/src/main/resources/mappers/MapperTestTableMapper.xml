@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.java.node.database.mybatis_plus_v3x.mapper.MapperTestTableMapper">
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        table_id
+        , uuid, name, counter, create_time, update_time
+    </sql>
+
+    <select id="queryList" resultType="com.java.node.database.mybatis_plus_v3x.entity.MapperTestTable">
+        select
+        <include refid="Base_Column_List"/>
+        from mapper_test_table
+        <where>
+            <if test="param.uuid!=null">
+                and uuid=#{param.uuid}
+            </if>
+            <if test="param.createTime!=null">
+                and create_time>=#{param.createTime}
+            </if>
+        </where>
+    </select>
+
+</mapper>

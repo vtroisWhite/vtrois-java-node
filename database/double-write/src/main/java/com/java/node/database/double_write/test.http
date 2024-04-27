@@ -1,0 +1,18 @@
+
+### 增删改查
+GET http://127.0.0.1:8080/doubleWrite/crud?name=qaq
+
+### 插入-单个
+GET http://127.0.0.1:8080/doubleWrite/c?name=qaq
+
+### 插入-批量
+GET http://127.0.0.1:8080/doubleWrite/c_list
+
+### 查询
+GET http://127.0.0.1:8080/doubleWrite/r?id=1
+
+### 修改
+GET http://127.0.0.1:8080/doubleWrite/u?id=1
+
+### 删除
+GET http://127.0.0.1:8080/doubleWrite/d?id=1

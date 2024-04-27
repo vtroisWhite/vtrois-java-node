@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <!--配置是否使用通用 Mapper 自带的注释扩展，默认 true-->
+        <!--<property name="useMapperCommentGenerator" value="false"/>-->
+
+        <!--通用 Mapper 插件，可以生成带注解的实体类-->
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
+            <property name="caseSensitive" value="true"/>
+            <property name="forceAnnotation" value="true"/>
+            <property name="beginningDelimiter" value="`"/>
+            <property name="endingDelimiter" value="`"/>
+            <!--配置是否启用lombok, 支持如下6种注解-->
+            <!--当配置 Data 后，Getter Setter ToString EqualsAndHashCode 会被忽略-->
+            <property name="lombok" value="Getter,Setter,Data,ToString,Accessors,EqualsAndHashCode"/>
+        </plugin>
+        <!--数据源配置-->
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/db0?useUnicode=true&amp;characterEncoding=utf8&amp;connectionCollation=utf8mb4_unicode_ci&amp;useSSL=false&amp;serverTimezone=Asia/Shanghai"
+                        userId="root"
+                        password="root">
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!--DTO包路径-->
+        <javaModelGenerator targetPackage="com.java.node.databse.tk_mybatis_v4x.entity" targetProject="src/main/java"/>
+        <!--mapper.xml包路径-->
+        <sqlMapGenerator targetPackage="mappers" targetProject="src/main/resources"/>
+        <!--Dao包路径-->
+        <javaClientGenerator targetPackage="com.java.node.databse.tk_mybatis_v4x.mapper" targetProject="src/main/java"
+                             type="XMLMAPPER"/>
+        <!--表配置，tableName支持%，表示全部生成--> <!-- domainObjectName ="mapper_test_table" 属性可以重命名对象名称-->
+        <table schema="db0" tableName="mapper_generate_test"/>
+    </context>
+</generatorConfiguration>

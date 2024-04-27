@@ -1,0 +1,3 @@
+
+### 停机
+GET {{host}}/gracefulShutdown/shutdown

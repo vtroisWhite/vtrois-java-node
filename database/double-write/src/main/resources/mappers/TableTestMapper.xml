@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.java.node.database.double_write.mapper.TableTestMapper">
+    <insert id="insertOne" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO db1.`test_table_1`
+            (`id`, `name`)
+        VALUES (#{id}, #{name})
+    </insert>
+    <insert id="insertMultiple" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO db1.`test_table_1`
+        (`id`, `name`)
+        VALUES
+        <foreach collection="list" item="data" separator=",">
+            ( #{data.id},#{data.name})
+        </foreach>
+    </insert>
+    <insert id="insertMultipleNoId" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO db1.`test_table_1`
+        (`name`)
+        VALUES
+        <foreach collection="list" item="data" separator=",">
+            ( #{data.name})
+        </foreach>
+    </insert>
+</mapper>
